@@ -16,7 +16,7 @@ char *_strcpy(char *dest, char *src)
 	while (src[a])
 	{
 		dest[a] = src[a];
-		i++;
+		a++;
 	}
 	dest[a] = 0;
 	return (dest);
@@ -33,11 +33,11 @@ char *_strdup(const char *std)
 	int len = 0;
 	char *ret;
 
-	if (str == NULL)
+	if (std == NULL)
 		return (NULL);
 	while (*std++)
-		length++;
-	ret = malloc(sizeof(char) * (length + 1));
+		len++;
+	ret = malloc(sizeof(char) * (len + 1));
 	if (!ret)
 		return (NULL);
 	for (len++; len--;)

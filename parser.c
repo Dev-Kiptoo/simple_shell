@@ -9,7 +9,7 @@
  */
 int is_cmd(info_t *info, char *path)
 {
-	struct passinfo str;
+	struct stat str;
 
 	(void)info;
 	if (!path || stat(path, &str))
@@ -52,7 +52,7 @@ char *dup_chars(char *pathstr, int start, int stop)
  */
 char *find_path(info_t *info, char *pathstr, char *cmd)
 {
-	int k = 0, curr_pos = 0;
+	int k = 0, i = 0, curr_pos = 0;
 	char *path;
 
 	if (!pathstr)

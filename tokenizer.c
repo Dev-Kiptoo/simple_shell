@@ -33,19 +33,19 @@ char **strtow(char *strw, char *cc)
 		c = 0;
 		while (!is_delim(strw[a + c], cc) && strw[a + c])
 			c++;
-		s[b] = malloc((c + 1) * sizeof(char));
-		if (!s[b])
+		ss[b] = malloc((c + 1) * sizeof(char));
+		if (!ss[b])
 		{
 			for (c = 0; c < b; c++)
-				free(s[c]);
+				free(ss[c]);
 			free(ss);
 			return (NULL);
 		}
 		for (d = 0; d < c; d++)
-			s[b][d] = str[a++];
-		s[b][d] = 0;
+			ss[b][d] = strw[a++];
+		ss[b][d] = 0;
 	}
-	s[b] = NULL;
+	ss[b] = NULL;
 	return (ss);
 }
 
@@ -78,8 +78,8 @@ char **strtow2(char *str, char cc)
 		c = 0;
 		while (str[a + c] != cc && str[a + c] && str[a + c] != cc)
 			c++;
-		s[b] = malloc((c + 1) * sizeof(char));
-		if (!s[b])
+		ss[b] = malloc((c + 1) * sizeof(char));
+		if (!ss[b])
 		{
 			for (c = 0; c < b; c++)
 				free(ss[c]);
@@ -87,9 +87,9 @@ char **strtow2(char *str, char cc)
 			return (NULL);
 		}
 		for (d = 0; d < c; d++)
-			s[b][d] = str[a++];
-		s[b][d] = 0;
+			ss[b][d] = str[a++];
+		ss[b][d] = 0;
 	}
-	s[b] = NULL;
+	ss[b] = NULL;
 	return (ss);
 }
