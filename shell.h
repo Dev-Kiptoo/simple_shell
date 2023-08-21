@@ -229,4 +229,58 @@ int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
 
+/* toem_main.c*/
+int main(int ab, char **j);
+
+/* memomery.c */
+int bfree(void **ptr);
+
+/* parser.c */
+int is_cmd(info_t *info, char *path);
+char *dup_chars(char *pathstr, int start, int stop);
+char *find_path(info_t *info, char *pathstr, char *cmd);
+
+/* toem_realloc.c */
+char *_memset(char *ss, char b, unsigned int n);
+void ffree(char **pps);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+
+/* toem_shell_loop.c */
+int hsh(info_t *info, char **ay);
+int find_builtin(info_t *info);
+void find_cmd(info_t *info);
+void fork_cmd(info_t *info);
+
+/* toem_string.c */
+int _strlen(char *ss);
+char *starts_with(const char *haystack, const char *needle);
+int _strcmp(char *s1, char *s2);
+char *_strcat(char *dest, char *src);
+
+/* toem_string1.c */
+char *_strcpy(char *dest, char *src);
+char *_strdup(const char *std);
+void _puts(char *stp);
+int _putchar(char c);
+
+/* toem_tokenizer.c */
+char **strtow(char *strw, char *cc);
+char **strtow2(char *str, char cc);
+
+/* toem_vars.c */
+int is_chain(info_t *info, char *buf, size_t *pp);
+void check_chain(info_t *info, char *buf, size_t *pp, size_t ii, size_t len);
+int replace_alias(info_t *info);
+int replace_vars(info_t *info);
+int replace_string(char **previous, char *current);
+
+/* toem_lists1.c */
+size_t list_len(const list_t *head);
+char **list_to_strings(list_t *hptr);
+size_t print_list(const list_t *hptr);
+list_t *node_starts_with(list_t *node, char *prefix, char cc);
+ssize_t get_node_index(list_t *hptr, list_t *node);
+
+
+
 #endif
